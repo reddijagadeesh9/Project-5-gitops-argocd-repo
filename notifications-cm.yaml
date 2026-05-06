@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: argocd-notifications-cm
+  namespace: argocd
+
+data:
+  service.slack: |
+    token: $slack-token
+
+  trigger.on-sync-succeeded: |
+    - description: Application synced successfully
+      send:
+        - app-sync-succeeded
+
+  template.app-sync-succeeded: |
+    message: |
+      Application {{.app.metadata.name}} synced successfully.
