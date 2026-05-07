@@ -1,6 +1,8 @@
 
 # Project 5 - GitOps Workflow with ArgoCD
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c49faf33-2dc8-440e-a67d-0c800890512a" />
+
 # Overview
 
 This project demonstrates a complete GitOps workflow implementation using ArgoCD and Kubernetes. The entire Kubernetes deployment configuration is stored in a GitHub repository, and ArgoCD continuously monitors and synchronizes the Kubernetes cluster state with the desired state defined in Git.
@@ -186,6 +188,7 @@ kind create cluster --name gitops-cluster --config kind-cluster.yaml
 ```bash
 kubectl get nodes
 ```
+<img width="873" height="206" alt="Screenshot 2026-05-06 225509" src="https://github.com/user-attachments/assets/3c16d350-2b10-4c85-a883-452fa292b47b" />
 
 ---
 
@@ -243,6 +246,7 @@ helm install argocd argo/argo-cd -n argocd
 ```bash
 kubectl get pods -n argocd
 ```
+<img width="1075" height="280" alt="Screenshot 2026-05-06 230145" src="https://github.com/user-attachments/assets/2e3a8f7c-bf16-4e75-93c1-d3a46022bde1" />
 
 ---
 
@@ -281,6 +285,7 @@ Username:
 ```text
 admin
 ```
+<img width="1016" height="755" alt="Screenshot 2026-05-06 232223" src="https://github.com/user-attachments/assets/a6674f7f-8818-40a6-b94d-de39b79ef4d5" />
 
 ---
 
@@ -361,6 +366,7 @@ spec:
 
   type: NodePort
 ```
+<img width="957" height="278" alt="Screenshot 2026-05-06 232242" src="https://github.com/user-attachments/assets/8037d328-22ed-4fbc-9ed8-433860e43ce9" />
 
 ---
 
@@ -403,6 +409,8 @@ Configured application from ArgoCD UI using:
 * Auto Sync Enabled
 * Self Heal Enabled
 
+<img width="1597" height="853" alt="Screenshot 2026-05-06 232511" src="https://github.com/user-attachments/assets/f04759e1-31a6-42ef-a09b-11f452db1cc3" />
+
 ---
 
 # STEP 11 - Verify GitOps Workflow
@@ -420,6 +428,7 @@ Changed to:
 ```yaml
 replicas: 4
 ```
+<img width="796" height="172" alt="Screenshot 2026-05-06 232540" src="https://github.com/user-attachments/assets/6764edc5-bc3b-4390-b269-41cee5b0d8cb" />
 
 ---
 
@@ -434,6 +443,7 @@ kubectl delete deployment nginx-app
 ArgoCD automatically recreated the deployment.
 
 ---
+<img width="1024" height="296" alt="Screenshot 2026-05-06 232806" src="https://github.com/user-attachments/assets/969005df-aa95-40e9-96b0-84775542205c" />
 
 # STEP 13 - Configure GitHub Actions
 
@@ -490,6 +500,11 @@ jobs:
         run: |
           git push origin main
 ```
+<img width="1916" height="869" alt="Screenshot 2026-05-06 233840" src="https://github.com/user-attachments/assets/5725fe6b-c710-4563-b8ff-b97aaa99611f" />
+
+<img width="1895" height="729" alt="Screenshot 2026-05-06 233850" src="https://github.com/user-attachments/assets/6afd38b5-93d9-4923-9ea7-0ec1555f00ed" />
+
+<img width="1641" height="868" alt="Screenshot 2026-05-06 233816" src="https://github.com/user-attachments/assets/edeb2d79-2fab-4afe-8574-90bb987f0f03" />
 
 ---
 
@@ -555,6 +570,8 @@ kubeseal \
 ```bash
 kubectl apply -f sealed-secret.yaml
 ```
+<img width="664" height="214" alt="Screenshot 2026-05-06 233029" src="https://github.com/user-attachments/assets/2ac86bde-dce8-41d7-bc5c-31c276e8ddb2" />
+<img width="1107" height="176" alt="Screenshot 2026-05-06 233100" src="https://github.com/user-attachments/assets/64bdb539-12b1-41ec-913d-f50f184c3d51" />
 
 ---
 
@@ -706,6 +723,10 @@ spec:
 ```bash
 kubectl apply -f applicationset.yaml
 ```
+<img width="1051" height="191" alt="Screenshot 2026-05-07 000553" src="https://github.com/user-attachments/assets/d1f37494-f82c-4902-820e-49a562e93240" />
+
+<img width="1705" height="713" alt="Screenshot 2026-05-07 001005" src="https://github.com/user-attachments/assets/5f893c3b-2762-441f-94a4-6e64bd90dbce" />
+
 
 ---
 
@@ -751,6 +772,11 @@ spec:
 ```bash
 kubectl apply -f project-sync-window.yaml
 ```
+<img width="1170" height="129" alt="Screenshot 2026-05-07 001132" src="https://github.com/user-attachments/assets/c86f2522-43a1-41a1-8a97-1c2a55f035e6" />
+
+<img width="1536" height="645" alt="Screenshot 2026-05-07 001255" src="https://github.com/user-attachments/assets/abb73199-0ab4-4791-9cc6-dea4d118b97e" />
+
+<img width="1629" height="528" alt="Screenshot 2026-05-07 001307" src="https://github.com/user-attachments/assets/51eb953b-6ba3-4b7d-8417-23efa4799b78" />
 
 ---
 
@@ -779,6 +805,7 @@ kubectl get deployments -A
 ```bash
 kubectl get svc -A
 ```
+<img width="1073" height="382" alt="Screenshot 2026-05-07 001349" src="https://github.com/user-attachments/assets/00a13ee8-2ecc-4e19-9052-ad845ebec771" />
 
 ---
 
@@ -809,6 +836,15 @@ Application Updated
 | PROD        | prod      | 5        |
 
 ---
+DEV
+<img width="1658" height="865" alt="Screenshot 2026-05-07 001739" src="https://github.com/user-attachments/assets/948d2212-10d5-422f-bf8f-0be21c8dec20" />
+
+STAGIGN
+<img width="1642" height="819" alt="Screenshot 2026-05-07 001829" src="https://github.com/user-attachments/assets/1bf13e7f-f72b-4118-bb14-ee0c9d728919" />
+
+PROD
+<img width="1634" height="849" alt="Screenshot 2026-05-07 001810" src="https://github.com/user-attachments/assets/fd02006a-5797-4818-9608-987e5d7267fa" />
+
 
 # Project Outcome
 
