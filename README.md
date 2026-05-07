@@ -78,7 +78,7 @@ Application Deployment
 | Configuration | Value        |
 | ------------- | ------------ |
 | OS            | Ubuntu 22.04 |
-| Instance Type | t3.medium    |
+| Instance Type |m7i-flex.large|   |
 | Storage       | 25 GB        |
 
 ---
